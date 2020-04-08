@@ -350,6 +350,56 @@ a {
     a.btn:hover {
       background-color: #084086; }
 
+body.modal-active {
+  overflow: hidden; }
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s, visibility .2s;
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); }
+  .modal.active {
+    opacity: 1;
+    visibility: visible; }
+  .modal .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-height: calc(100% - 120px);
+    overflow: scroll;
+    margin: auto;
+    margin-top: 8vh;
+    width: calc(100% - 40px);
+    max-width: 1350px;
+    background-color: #fff; }
+    .modal .content > .inner {
+      padding: 60px 30px 30px;
+      position: relative; }
+    .modal .content .modal-heading {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 30px; }
+    .modal .content textarea {
+      height: 120px; }
+      @media (min-height: 900px) {
+        .modal .content textarea {
+          height: 180px; } }
+      @media (min-height: 1000px) {
+        .modal .content textarea {
+          height: 240px; } }
+    .modal .content .close-modal {
+      position: absolute;
+      top: 5px;
+      right: 15px;
+      font-size: 32px; }
+
 .site-main .page-section.secondary {
   /* Background pattern downloaded from Subtle Patterns -- https://www.toptal.com/designers/subtlepatterns/y-so-serious-pattern/ */
   background-image: url(../images/y-so-serious.png);
@@ -424,5 +474,17 @@ a {
 .projects .project .role {
   margin-top: 0;
   margin-bottom: 25px; }
+
+.projects .project .modal-content {
+  display: none; }
+
+.role-tag {
+  display: inline-block;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: 700;
+  background-color: #ea6100;
+  font-size: 0.75em;
+  border-radius: 3px; }
 
 /*# sourceMappingURL=style.css.map */

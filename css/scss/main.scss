@@ -96,5 +96,18 @@
 			margin-top: 0;
 			margin-bottom: 25px;
 		}
+
+		.modal-content {
+			display: none;
+		}
 	}
+}
+.role-tag {
+	display: inline-block;
+	color: #fff;
+	padding: 5px 10px;
+	font-weight: 700;
+	background-color: $orange;
+	font-size: 0.75em;
+	border-radius: 3px;
 }
