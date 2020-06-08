@@ -399,6 +399,8 @@ body.modal-active {
       top: 5px;
       right: 15px;
       font-size: 32px; }
+  .modal .overview {
+    margin: 30px 0 40px; }
 
 .site-main .page-section.secondary {
   /* Background pattern downloaded from Subtle Patterns -- https://www.toptal.com/designers/subtlepatterns/y-so-serious-pattern/ */
