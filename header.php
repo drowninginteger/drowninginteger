@@ -29,6 +29,7 @@
 
 					<h2 class="name">Sarah Blikre</h2>
 					<p class="address">Arlington, WA</p>
+					<p class="job-title">Web Developer</p>
 
 				</div>
 			</section>
