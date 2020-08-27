@@ -350,7 +350,8 @@ a {
     a.btn:hover {
       background-color: #084086; }
 
-body.modal-active {
+body.modal-active,
+body.resume-modal-active {
   overflow: hidden; }
 
 .modal {
@@ -402,6 +403,64 @@ body.modal-active {
   .modal .overview {
     margin: 30px 0 40px; }
 
+.resume .resume-heading {
+  margin: 0 0 20px; }
+
+.resume .tabs {
+  padding: 0;
+  margin: 0;
+  border-bottom: 3px solid #444;
+  overflow: hidden; }
+  .resume .tabs .tab {
+    float: left;
+    list-style-type: none;
+    border-right: 2px solid #444; }
+  .resume .tabs .tab-link {
+    display: block;
+    padding: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background-color .15s;
+    -webkit-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
+    .resume .tabs .tab-link:hover {
+      background-color: rgba(0, 0, 0, 0.2); }
+    @media (min-width: 992px) {
+      .resume .tabs .tab-link {
+        padding-left: 20px;
+        padding-right: 20px; } }
+  .resume .tabs .tab.active .tab-link {
+    background-color: #ea6100;
+    color: #fff;
+    cursor: default; }
+
+.resume .panel {
+  display: none;
+  padding: 15px 0; }
+  .resume .panel.active {
+    display: block; }
+  .resume .panel .panel-heading {
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #888; }
+  .resume .panel .panel-content {
+    max-width: 800px; }
+    .resume .panel .panel-content .label {
+      font-weight: 700; }
+
+.resume .job-heading,
+.resume .education-heading {
+  margin-bottom: 0; }
+
+.resume .job-location-time,
+.resume .education-location-time {
+  margin-top: 0;
+  color: #888;
+  font-size: 15px;
+  font-style: italic; }
+
 .site-main .page-section.secondary {
   /* Background pattern downloaded from Subtle Patterns -- https://www.toptal.com/designers/subtlepatterns/y-so-serious-pattern/ */
   background-image: url(../images/y-so-serious.png);
@@ -422,7 +481,12 @@ body.modal-active {
   .site-main .page-section.secondary .name {
     margin-bottom: 5px; }
   .site-main .page-section.secondary .address {
+    margin-bottom: 0; }
+  .site-main .page-section.secondary .job-title {
     margin-top: 0; }
+  .site-main .page-section.secondary a {
+    color: #fff;
+    text-decoration: underline; }
 
 .site-main .page-section.primary > .inner {
   padding: 20px; }

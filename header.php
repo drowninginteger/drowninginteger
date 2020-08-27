@@ -17,7 +17,7 @@
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
-<body>
+<body class="<?php echo (isset($_GET['resume']) && $_GET['resume'] == '1' ? 'resume-modal-active' : ''); ?>">
 
 	<div class="page-wrap">
 		<main class="site-main">
@@ -30,6 +30,9 @@
 					<h2 class="name">Sarah Blikre</h2>
 					<p class="address">Arlington, WA</p>
 					<p class="job-title">Web Developer</p>
+					<p class="email"><a href="mailto:sarahblikre@gmail.com">sarahblikre@gmail.com</a></p>
+
+					<p class="view-resume"><a href="#">View My Résumé</a></p>
 
 				</div>
 			</section>

@@ -29,11 +29,11 @@ gulp.task('theme:css:dev', function() {
 		.pipe($.notify({ title: 'CSS Compiled Successfully', message: '<%= file.relative %>', onLast: true }))
 });
 
-gulp.task('theme:css:prod', ['theme:css:dev'], function() {
+gulp.task('theme:css:prod', gulp.series(['theme:css:dev', function() {
 	return gulp.src(themePath + 'css/style.css')
 		.pipe($.bless())
 		.pipe(gulp.dest(themePath + 'css/'));
-});
+}]));
 
 gulp.task('theme:js:prod', function() {
 	return gulp.src([ themePath + 'js/**/*.js', '!' + themePath + 'js/**/*.min.js' ])
@@ -48,16 +48,16 @@ gulp.task('theme:js:prod', function() {
 // watch tasks
 
 gulp.task('watch:dev', function() {
-	gulp.watch(themePath + 'css/**/*.scss', ['theme:css:dev']);
-	gulp.watch([ themePath + 'js/**/*.js', '!' + themePath + 'js/**/*.min.js' ], ['theme:js:prod']);
+	gulp.watch(themePath + 'css/**/*.scss', gulp.series(['theme:css:dev']));
+	gulp.watch([ themePath + 'js/**/*.js', '!' + themePath + 'js/**/*.min.js' ], gulp.series(['theme:js:prod']));
 });
 
 gulp.task('watch:prod', function() {
-	gulp.watch(themePath + 'css/**/*.scss', ['theme:css:prod']);
-	gulp.watch([ themePath + 'js/**/*.js', '!' + themePath + 'js/**/*.min.js' ], ['theme:js:prod']);
+	gulp.watch(themePath + 'css/**/*.scss', gulp.series(['theme:css:prod']));
+	gulp.watch([ themePath + 'js/**/*.js', '!' + themePath + 'js/**/*.min.js' ], gulp.series(['theme:js:prod']));
 });
 
 
 // default task
 
-gulp.task('default', ['watch:prod']);
+gulp.task('default', gulp.series(['watch:prod']));

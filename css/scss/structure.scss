@@ -59,7 +59,8 @@ a {
 
 // ---- Modals ---- //
 
-body.modal-active {
+body.modal-active,
+body.resume-modal-active {
 	overflow: hidden;
 }
 
