@@ -412,25 +412,34 @@ body.resume-modal-active {
   border-bottom: 3px solid #444;
   overflow: hidden; }
   .resume .tabs .tab {
-    float: left;
     list-style-type: none;
-    border-right: 2px solid #444; }
+    border-bottom: 1px solid #444; }
+    @media (min-width: 768px) {
+      .resume .tabs .tab {
+        float: left;
+        border-bottom: 0;
+        border-right: 2px solid #444; } }
   .resume .tabs .tab-link {
     display: block;
-    padding: 14px;
+    padding: 10px 15px;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 12px;
     transition: background-color .15s;
     -webkit-user-select: none;
         -ms-user-select: none;
             user-select: none; }
     .resume .tabs .tab-link:hover {
       background-color: rgba(0, 0, 0, 0.2); }
+    @media (min-width: 768px) {
+      .resume .tabs .tab-link {
+        padding: 14px;
+        font-size: 13px; } }
     @media (min-width: 992px) {
       .resume .tabs .tab-link {
         padding-left: 20px;
-        padding-right: 20px; } }
+        padding-right: 20px;
+        font-size: 14px; } }
   .resume .tabs .tab.active .tab-link {
     background-color: #ea6100;
     color: #fff;

@@ -13,17 +13,22 @@
 		overflow: hidden;
 
 		.tab {
-			float: left;
 			list-style-type: none;
-			border-right: 2px solid #444;
+			border-bottom: 1px solid #444;
+
+			@media (min-width: $screen-sm){
+				float: left;
+				border-bottom: 0;
+				border-right: 2px solid #444;
+			}
 		}
 
 		.tab-link {
 			display: block;
-			padding: 14px;
+			padding: 10px 15px;
 			text-transform: uppercase;
 			font-weight: 700;
-			font-size: 14px;
+			font-size: 12px;
 			transition: background-color .15s;
 			user-select: none;
 
@@ -31,9 +36,14 @@
 				background-color: rgba(0,0,0,0.2);
 			}
 
+			@media (min-width: $screen-sm){
+				padding: 14px;
+				font-size: 13px;
+			}
 			@media (min-width: $screen-md){
 				padding-left: 20px;
 				padding-right: 20px;
+				font-size: 14px;
 			}
 		}
 		.tab.active .tab-link {
