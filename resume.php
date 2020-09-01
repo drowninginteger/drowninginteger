@@ -3,7 +3,7 @@
 
 	<h1 class="resume-heading">My Résumé</h1>
 
-	<p class="download-resume"><a href="assets/resume.pdf">Download PDF</a></p>
+	<p class="download-resume"><a href="resume.pdf">Download PDF</a></p>
 
 	<ul class="tabs">
 		<li class="tab active"><a href="#" class="tab-link" data-index="1">Overview</a></li>
