@@ -400,11 +400,16 @@ body.resume-modal-active {
       top: 5px;
       right: 15px;
       font-size: 32px; }
+  .modal.resume-modal .content > .inner {
+    padding-top: 30px; }
   .modal .overview {
     margin: 30px 0 40px; }
 
 .resume .resume-heading {
-  margin: 0 0 20px; }
+  margin: 0 0 10px; }
+
+.resume .download-resume {
+  margin: 0 0 30px; }
 
 .resume .tabs {
   padding: 0;

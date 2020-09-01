@@ -116,6 +116,9 @@ body.resume-modal-active {
 			font-size: 32px;
 		}
 	}
+	&.resume-modal .content > .inner {
+		padding-top: 30px;
+	}
 
 	.overview {
 		margin: 30px 0 40px;
