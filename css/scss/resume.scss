@@ -1,5 +1,8 @@
 
 .resume {
+	max-width: 1000px;
+	margin: 40px auto;
+	
 	.resume-heading {
 		margin: 0 0 10px;
 	}
@@ -8,73 +11,32 @@
 		margin: 0 0 30px;
 	}
 
-	.tabs {
-		padding: 0;
-		margin: 0;
-		border-bottom: 3px solid #444;
-		overflow: hidden;
+	.columns {
+		display: grid;
+		gap: 30px;
 
-		.tab {
-			list-style-type: none;
-			border-bottom: 1px solid #444;
+		@media (min-width: $screen-sm) {
+			grid-template-columns: 1fr 1fr;
+			gap: 0 30px;
 
-			@media (min-width: $screen-sm){
-				float: left;
-				border-bottom: 0;
-				border-right: 2px solid #444;
+			> .column {
+				&:first-child {
+					grid-column: span 2;
+				}
 			}
-		}
-
-		.tab-link {
-			display: block;
-			padding: 10px 15px;
-			text-transform: uppercase;
-			font-weight: 700;
-			font-size: 12px;
-			transition: background-color .15s;
-			user-select: none;
-
-			&:hover {
-				background-color: rgba(0,0,0,0.2);
-			}
-
-			@media (min-width: $screen-sm){
-				padding: 14px;
-				font-size: 13px;
-			}
-			@media (min-width: $screen-md){
-				padding-left: 20px;
-				padding-right: 20px;
-				font-size: 14px;
-			}
-		}
-		.tab.active .tab-link {
-			background-color: $orange;
-			color: #fff;
-			cursor: default;
 		}
 	}
+	
+	.panel-heading {
+		padding-bottom: 10px;
+		margin-top: 30px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #ddd;
+	}
 
-	.panel {
-		display: none;
-		padding: 15px 0;
-
-		&.active {
-			display: block;
-		}
-
-		.panel-heading {
-			padding-bottom: 10px;
-			margin-bottom: 40px;
-			border-bottom: 1px solid #888;
-		}
-
-		.panel-content {
-			max-width: 800px;
-
-			.label {
-				font-weight: 700;
-			}
+	.panel-content {
+		.label {
+			font-weight: 700;
 		}
 	}
 
@@ -89,5 +51,55 @@
 		color: #888;
 		font-size: 15px;
 		font-style: italic;
+	}
+
+	.contact-info {
+		p {
+			margin: 5px 0;
+		}
+	}
+}
+
+
+// --- Print Styles --- //
+
+@media print {
+	.page-wrap,
+	.project-modal,
+	.close-modal {
+		display: none;
+	}
+
+	.resume-modal {
+		opacity: 1;
+		visibility: visible;
+		position: static;
+		height: auto;
+
+		.modal-content {
+			position: static;
+			max-height: none;
+			overflow: visible;
+			margin: 0;
+			padding: 0;
+			width: auto;
+			max-width: none;
+		}
+	}
+
+	.resume {
+		font-size: 12px;
+		margin-top: 0;
+
+		.panel-heading {
+			padding-bottom: 6px;
+			margin-top: 15px;
+			margin-bottom: 10px;
+		}
+
+		.job-location-time,
+		.education-location-time {
+			font-size: inherit;
+		}
 	}
 }

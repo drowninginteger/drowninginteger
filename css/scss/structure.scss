@@ -31,12 +31,11 @@ body {
 	margin-right: auto;
 }
 
-img {
+img, video {
 	vertical-align: middle;
 	display: block;
 	max-width: 100%;
 	width: auto;
-	height: auto;
 }
 
 a {
@@ -118,6 +117,18 @@ body.resume-modal-active {
 	}
 	&.resume-modal .content > .inner {
 		padding-top: 30px;
+	}
+
+	.modal-columns {
+		@media (min-width: $screen-sm){
+			display: flex;
+			align-tracks: flex-start;
+			gap: 30px;
+
+			> .modal-column {
+				flex: 0 0 50%;
+			}
+		}
 	}
 
 	.overview {

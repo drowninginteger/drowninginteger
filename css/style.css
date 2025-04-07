@@ -414,12 +414,12 @@ body {
   margin-right: auto;
 }
 
-img {
+img,
+video {
   vertical-align: middle;
   display: block;
   max-width: 100%;
   width: auto;
-  height: auto;
 }
 
 a {
@@ -515,12 +515,31 @@ body.resume-modal-active {
   padding-top: 30px;
 }
 
+@media (min-width: 768px) {
+  .modal .modal-columns {
+    display: -ms-flexbox;
+    display: flex;
+    align-tracks: flex-start;
+    gap: 30px;
+  }
+
+  .modal .modal-columns > .modal-column {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+  }
+}
+
 .modal .overview {
   margin: 30px 0 40px;
 }
 
 .modal .site-image-large {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.resume {
+  max-width: 1000px;
+  margin: 40px auto;
 }
 
 .resume .resume-heading {
@@ -531,83 +550,30 @@ body.resume-modal-active {
   margin: 0 0 30px;
 }
 
-.resume .tabs {
-  padding: 0;
-  margin: 0;
-  border-bottom: 3px solid #444;
-  overflow: hidden;
-}
-
-.resume .tabs .tab {
-  list-style-type: none;
-  border-bottom: 1px solid #444;
+.resume .columns {
+  display: grid;
+  gap: 30px;
 }
 
 @media (min-width: 768px) {
-  .resume .tabs .tab {
-    float: left;
-    border-bottom: 0;
-    border-right: 2px solid #444;
+  .resume .columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 30px;
+  }
+
+  .resume .columns > .column:first-child {
+    grid-column: span 2;
   }
 }
 
-.resume .tabs .tab-link {
-  display: block;
-  padding: 10px 15px;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 12px;
-  transition: background-color .15s;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.resume .tabs .tab-link:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-@media (min-width: 768px) {
-  .resume .tabs .tab-link {
-    padding: 14px;
-    font-size: 13px;
-  }
-}
-
-@media (min-width: 992px) {
-  .resume .tabs .tab-link {
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 14px;
-  }
-}
-
-.resume .tabs .tab.active .tab-link {
-  background-color: #ea6100;
-  color: #fff;
-  cursor: default;
-}
-
-.resume .panel {
-  display: none;
-  padding: 15px 0;
-}
-
-.resume .panel.active {
-  display: block;
-}
-
-.resume .panel .panel-heading {
+.resume .panel-heading {
   padding-bottom: 10px;
-  margin-bottom: 40px;
-  border-bottom: 1px solid #888;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
 }
 
-.resume .panel .panel-content {
-  max-width: 800px;
-}
-
-.resume .panel .panel-content .label {
+.resume .panel-content .label {
   font-weight: 700;
 }
 
@@ -622,6 +588,51 @@ body.resume-modal-active {
   color: #888;
   font-size: 15px;
   font-style: italic;
+}
+
+.resume .contact-info p {
+  margin: 5px 0;
+}
+
+@media print {
+  .page-wrap,
+  .project-modal,
+  .close-modal {
+    display: none;
+  }
+
+  .resume-modal {
+    opacity: 1;
+    visibility: visible;
+    position: static;
+    height: auto;
+  }
+
+  .resume-modal .modal-content {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    max-width: none;
+  }
+
+  .resume {
+    font-size: 12px;
+    margin-top: 0;
+  }
+
+  .resume .panel-heading {
+    padding-bottom: 6px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .resume .job-location-time,
+  .resume .education-location-time {
+    font-size: inherit;
+  }
 }
 
 .site-main .page-section.secondary {
