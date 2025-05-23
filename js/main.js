@@ -70,7 +70,7 @@
 
 		$.sbtheme.initViewportSize();
 		$.sbtheme.initScrollPos();
-		// $.sbtheme.initHeader();
+		$.sbtheme.initHeader();
 		$.sbtheme.initMobileMenu();
 		$.sbtheme.initModals();
 		$.sbtheme.initResume();
@@ -79,6 +79,20 @@
 
 
 	$.sbtheme = (function(sbtheme) {
+
+		sbtheme.initHeader = function() {
+
+			$('.header-nav a').on('click', function(e){
+				const href = $(this).attr('href');
+
+				if ( href.startsWith('#') ) {
+					e.preventDefault();
+
+					$.sbtheme.smoothScrollToElement( $(href) );
+				}
+			});
+			
+		};
 
 		sbtheme.initMobileMenu = function() {
 
@@ -153,7 +167,7 @@
 		};
 
 		sbtheme.smoothScrollToElement = function(element, speed, offset) {
-			speed = typeof speed !== 'undefined' ? speed : 1000;
+			speed = typeof speed !== 'undefined' ? speed : 500;
 			offset = typeof offset !== 'undefined' ? offset : 0;
 			if(element.length > 0) {
 				var margin = parseInt(element.css('margin-top'));
@@ -161,10 +175,10 @@
 			}
 		};
 		sbtheme.smoothScrollToPos = function(y, speed, offset) {
-			speed = typeof speed !== 'undefined' ? speed : 1000;
+			speed = typeof speed !== 'undefined' ? speed : 500;
 			offset = typeof offset !== 'undefined' ? offset : 0;
 			var fixedHeaderOffset = 0;
-			$('html, body').stop(true).animate({ scrollTop: y - fixedHeaderOffset + offset }, speed, 'easeInOutExpo');
+			$('html, body').stop(true).animate({ scrollTop: y - fixedHeaderOffset + offset }, speed, 'swing');
 		};
 
 		sbtheme.initScrollPos = function(){

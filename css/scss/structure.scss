@@ -14,8 +14,10 @@ html, body, .page-wrap, .site-main {
 body {
 	font-family: $font-family;
 	font-size: 16px;
+	font-weight: 300;
 	line-height: 1.5;
 	position: relative;
+	background-color: $light-gray;
 }
 
 .page-wrap {
@@ -40,7 +42,8 @@ img, video {
 
 a {
 	text-decoration: none;
-	color: $blue;
+	color: $primary;
+	font-weight: 400;
 
 	&.btn {
 		display: inline-block;
@@ -51,7 +54,7 @@ a {
 		transition: background-color .15s;
 
 		&:hover {
-			background-color: darken($blue, 15%);
+			background-color: darken($primary, 15%);
 		}
 	}
 }
